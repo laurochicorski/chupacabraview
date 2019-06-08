@@ -1,0 +1,62 @@
+<template>
+  <div id="app">
+    <el-row>
+      <el-col :span="4">
+        <img src="./assets/logoSankhya.png" style="width:80%; height:80%; margin-top: 10px">
+        <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" router>
+          <!--<el-menu-item index="/">Home</el-menu-item>-->
+          <el-submenu index="1">
+            <template slot="title"><i class="el-icon-document"></i>Cadastros</template>
+            <!--<el-menu-item index="/certificadoDigital">Certificado Digital</el-menu-item>-->
+            <!--<el-menu-item index="/cfop">CFOP</el-menu-item>-->
+            <!--<el-menu-item index="/cidade">Cidade</el-menu-item>-->
+            <el-menu-item index="/empresa">Empresas</el-menu-item>
+            <el-menu-item index="/pessoa">Parceiros</el-menu-item>
+            <el-menu-item index="/cidade">Produtos</el-menu-item>
+            <el-menu-item index="/produto">Financeiros</el-menu-item>
+            <!--<el-menu-item index="/uf">Unidade Federativa</el-menu-item>-->
+            <!--<el-menu-item index="/usuario">Usuário</el-menu-item>-->
+            <!--<el-menu-item index="/veiculo">Veículo</el-menu-item>-->
+          </el-submenu>
+          <el-submenu index="2">
+            <template slot="title"><i class="el-icon-document"></i>Processos</template>
+            <el-menu-item index="/cte"><i class="el-icon-menu"></i>Compras</el-menu-item>
+            <el-menu-item index="/cte"><i class="el-icon-menu"></i>Vendas</el-menu-item>
+          </el-submenu>
+        </el-menu>
+      </el-col>
+      <el-col :span="20">
+        <router-view></router-view>
+      </el-col>
+    </el-row>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+      return {
+        isCollapse: true
+      };
+    },
+    methods: {
+      handleOpen(key, keyPath) {
+        console.log(key, keyPath);
+      },
+      handleClose(key, keyPath) {
+        console.log(key, keyPath);
+      }
+    }
+  }
+</script>
+
+<style>
+#app {
+  font-family: Helvetica, sans-serif;
+  text-align: center;
+}
+.barra {
+    background : #E5E9F2;
+    border-radius: 10px;
+}
+</style>
